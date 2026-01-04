@@ -18,8 +18,9 @@ def generate_5g_traffic_data(num_samples=10000):
     np.random.seed(42)
     
     # 1. Feature: Hour of Day
-    hours = np.random.randint(0, 24, num_samples)
-    
+    #hours = np.random.randint(0, 24, num_samples)
+    timeline = np.arange(num_samples) 
+    hours = timeline % 24  # Esto genera 0,1,2...23, 0,1,2... en orden perfecto
     # 2. Feature: Active User Count (correlated with time)
     # More users in the evening (18:00 - 22:00)
     user_base = 100
